@@ -6,22 +6,22 @@ tests/
 coverage/
 .github/
 .vscode/
+.devcontainer/
+.claude/
 
 # Build artifacts
 bin/claude-flow-simple
 bin/claude-flow-typecheck
 *.tgz
 
-# Documentation
+# Documentation source
 docs/
-examples/
 plans/
 research/
 coordination/
-memory/
 mcp_config/
 
-# Scripts (except install.js)
+# Scripts (except install.js and build.js)
 scripts/*.ts
 scripts/*.sh
 scripts/demo-*.ts
@@ -29,6 +29,17 @@ scripts/test-*.ts
 scripts/validate-*.ts
 scripts/check-*.ts
 scripts/coverage-*.ts
+scripts/test-runner.ts
+!scripts/install.js
+!scripts/build.js
+
+# Memory data files (keep structure)
+memory/*.json
+memory/sessions/*
+memory/agents/*
+!memory/README.md
+!memory/sessions/README.md
+!memory/agents/README.md
 
 # Logs and temp files
 *.log
@@ -42,7 +53,15 @@ test-results/
 tsconfig.json
 vitest.config.ts
 codecov.yml
-claude.md
+test-setup.ts
+CLAUDE.md
 *.md
 !README.md
 !LICENSE
+
+# Git
+.git/
+.gitignore
+
+# Examples (users can find on GitHub)
+examples/

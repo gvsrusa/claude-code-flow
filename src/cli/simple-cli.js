@@ -4,7 +4,7 @@
  * This version avoids TypeScript issues in node_modules
  */
 
-const VERSION = '1.0.0';
+const VERSION = '1.0.5';
 
 function printHelp() {
   console.log(`

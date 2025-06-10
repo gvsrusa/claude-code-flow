@@ -31,22 +31,28 @@
 ## 📦 **Installation**
 
 ```bash
-# 🚀 Get started in 30 seconds
-npx claude-flow init
-npx claude-flow start
+# 🚀 Get started instantly with npx (no installation required)
+npx claude-flow
+
+# 🤖 Or install globally
+npm install -g claude-flow
+
+# 💫 Initialize and start
+claude-flow config init
+claude-flow start
 
 # 🤖 Spawn a research team
-npx claude-flow agent spawn researcher --name "Senior Researcher"
-npx claude-flow agent spawn analyst --name "Data Analyst"
-npx claude-flow agent spawn implementer --name "Code Developer"
+claude-flow agent spawn researcher --name "Senior Researcher"
+claude-flow agent spawn analyst --name "Data Analyst"
+claude-flow agent spawn implementer --name "Code Developer"
 
 # 📋 Create and execute tasks
-npx claude-flow task create research "Research AI optimization techniques"
-npx claude-flow task list
+claude-flow task create research "Research AI optimization techniques"
+claude-flow task list
 
 # 📊 Monitor in real-time
-npx claude-flow status
-npx claude-flow monitor
+claude-flow status
+claude-flow monitor
 ```
 
 ## 🏗️ **Core Features**
@@ -98,7 +104,7 @@ Full Model Context Protocol support with stdio and HTTP transports, enabling sea
 
 ### 🎯 **Option 1: NPX (Recommended)**
 ```bash
-# Install and run in one command
+# Run instantly without installation
 npx claude-flow
 
 # Or install globally for repeated use
@@ -108,21 +114,30 @@ claude-flow --version
 
 ### 🦕 **Option 2: Deno (For Developers)**
 ```bash
-# Install via Deno
-deno install --allow-all --name claude-flow \
-  https://raw.githubusercontent.com/ruvnet/claude-code-flow/main/src/cli/index.ts
+# Clone and run with Deno
+git clone https://github.com/ruvnet/claude-code-flow.git
+cd claude-code-flow
+deno task start
 
-# Or run directly
-deno run --allow-all \
-  https://raw.githubusercontent.com/ruvnet/claude-code-flow/main/src/cli/index.ts
+# Or install via Deno
+deno install --allow-all --name claude-flow src/cli/index.ts
 ```
 
 ### 🔧 **Option 3: From Source (For Contributors)**
 ```bash
 git clone https://github.com/ruvnet/claude-code-flow.git
 cd claude-code-flow
-deno task build && deno task install
+npm install
+npm run build
 ```
+
+### 📋 **Prerequisites**
+
+Claude-Flow requires [Deno](https://deno.land/) to run. If Deno is not installed, you'll be prompted to install it:
+
+- **macOS/Linux**: `curl -fsSL https://deno.land/install.sh | sh`
+- **Windows**: `irm https://deno.land/install.ps1 | iex`
+- **Homebrew**: `brew install deno`
 
 ## 📚 **Documentation**
 

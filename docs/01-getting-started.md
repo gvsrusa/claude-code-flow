@@ -6,7 +6,7 @@ Welcome to Claude-Flow, an advanced AI agent orchestration system designed for s
 
 ### Option 1: NPX (Recommended for First-Time Users)
 ```bash
-# Run directly without installation
+# Run instantly without installation
 npx claude-flow
 
 # Or install globally for persistent use
@@ -14,26 +14,41 @@ npm install -g claude-flow
 claude-flow --version
 ```
 
-### Option 2: Deno Installation
-```bash
-# Install with Deno
-deno install --allow-all --name claude-flow https://raw.githubusercontent.com/ruvnet/claude-code-flow/main/src/cli/index.ts
-
-# Verify installation
-claude-flow --help
-```
-
-### Option 3: From Source
+### Option 2: From Source (For Developers)
 ```bash
 # Clone the repository
 git clone https://github.com/ruvnet/claude-code-flow.git
 cd claude-code-flow
 
-# Install dependencies and build
-deno task install
+# Install dependencies
+npm install
 
 # Run from source
-deno task dev
+deno task start
+```
+
+### Option 3: Deno Direct Installation
+```bash
+# Install with Deno (requires Deno to be installed)
+deno install --allow-all --name claude-flow src/cli/index.ts
+
+# Verify installation
+claude-flow --help
+```
+
+## Prerequisites
+
+Claude-Flow requires [Deno](https://deno.land/) runtime. If not installed, you'll be prompted during setup:
+
+- **macOS**: `brew install deno` or `curl -fsSL https://deno.land/install.sh | sh`
+- **Linux**: `curl -fsSL https://deno.land/install.sh | sh`
+- **Windows**: `irm https://deno.land/install.ps1 | iex`
+
+After installing Deno, ensure it's in your PATH:
+```bash
+# Add to your shell profile (.bashrc, .zshrc, etc.)
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 ```
 
 ## Initial Setup

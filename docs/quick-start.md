@@ -4,13 +4,14 @@ Get up and running with Claude-Flow in just a few minutes! This guide will walk 
 
 ## Prerequisites
 
-- **Node.js 18+** or **Deno 1.40+**
+- **Node.js 16+** and npm
 - **Terminal access** (Command Prompt, PowerShell, Terminal, etc.)
 - **Internet connection** for package installation
+- **Deno runtime** (will be installed automatically if not present)
 
 ## Installation
 
-### Option 1: NPX (Recommended for Quick Start)
+### Option 1: NPX (Recommended - No Installation Required)
 
 Run Claude-Flow instantly without installation:
 
@@ -18,7 +19,7 @@ Run Claude-Flow instantly without installation:
 npx claude-flow
 ```
 
-This will download and run the latest version, perfect for trying out the system.
+This will download and run the latest version immediately.
 
 ### Option 2: Global Installation
 
@@ -34,12 +35,32 @@ Verify installation:
 claude-flow --version
 ```
 
-### Option 3: Deno Installation
+### Option 3: From Source
 
-For Deno users:
+For developers and contributors:
 
 ```bash
-deno install --allow-all --name claude-flow https://raw.githubusercontent.com/ruvnet/claude-code-flow/main/src/cli/index.ts
+git clone https://github.com/ruvnet/claude-code-flow.git
+cd claude-code-flow
+npm install
+npm run build
+```
+
+### Deno Installation
+
+Claude-Flow requires Deno to run. If not installed, you'll be prompted during first use:
+
+- **macOS**: `brew install deno` or `curl -fsSL https://deno.land/install.sh | sh`
+- **Linux**: `curl -fsSL https://deno.land/install.sh | sh`  
+- **Windows**: Open PowerShell as Administrator and run: `irm https://deno.land/install.ps1 | iex`
+
+After installation, add Deno to your PATH:
+```bash
+# Linux/macOS - add to ~/.bashrc or ~/.zshrc
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+# Windows - add %USERPROFILE%\.deno\bin to PATH environment variable
 ```
 
 ## First Run

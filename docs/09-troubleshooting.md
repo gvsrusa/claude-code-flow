@@ -18,14 +18,37 @@ npm list -g claude-flow
 npm install -g claude-flow
 npm bin -g  # Check global bin directory
 
-# For Deno installation
-deno info claude-flow
-export PATH="$HOME/.deno/bin:$PATH"
-echo 'export PATH="$HOME/.deno/bin:$PATH"' >> ~/.bashrc
+# Add npm global bin to PATH
+export PATH="$(npm bin -g):$PATH"
+echo 'export PATH="$(npm bin -g):$PATH"' >> ~/.bashrc
 
 # Verify installation
 claude-flow --version
 claude-flow help
+```
+
+**Issue: Deno is not installed or not found**
+```bash
+# Diagnosis
+deno --version
+
+# Solutions
+# macOS
+brew install deno
+# or
+curl -fsSL https://deno.land/install.sh | sh
+
+# Linux
+curl -fsSL https://deno.land/install.sh | sh
+
+# Windows (PowerShell as Administrator)
+irm https://deno.land/install.ps1 | iex
+
+# Add Deno to PATH
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+# Windows: Add %USERPROFILE%\.deno\bin to PATH environment variable
 ```
 
 **Issue: Permission denied errors**
@@ -43,10 +66,7 @@ chmod +x $(which claude-flow)
 npm config set prefix ~/.npm-global
 export PATH=~/.npm-global/bin:$PATH
 
-# Use sudo for global installation (not recommended)
-sudo npm install -g claude-flow
-
-# Alternative: Use npx without global installation
+# Use npx without installation (recommended)
 npx claude-flow --version
 ```
 

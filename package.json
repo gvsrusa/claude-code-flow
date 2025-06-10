@@ -1,6 +1,6 @@
 {
   "name": "claude-flow",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Advanced AI agent orchestration system for Claude Code",
   "main": "src/cli/main.ts",
   "bin": {
@@ -8,9 +8,9 @@
   },
   "scripts": {
     "postinstall": "node scripts/install.js",
-    "build": "PATH=\"/home/codespace/.deno/bin:$PATH\" deno compile --allow-all --no-check --output=bin/claude-flow src/cli/main.ts",
-    "build:simple": "PATH=\"/home/codespace/.deno/bin:$PATH\" deno compile --allow-all --no-check --output=bin/claude-flow-simple src/cli/simple-cli.ts",
-    "test": "deno task test"
+    "build": "node scripts/build.js",
+    "test": "deno task test",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "claude",
@@ -38,6 +38,7 @@
     "bin/claude-flow",
     "src/",
     "scripts/install.js",
+    "scripts/build.js",
     "README.md",
     "LICENSE",
     "deno.json"

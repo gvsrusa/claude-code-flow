@@ -8,7 +8,7 @@ This comprehensive documentation covers all aspects of Claude-Flow, from quick s
 
 ### 🚀 Getting Started
 - **[Quick Start Guide](./quick-start.md)** - Get up and running in minutes
-- **[Installation](./quick-start.md#installation)** - Multiple installation methods
+- **[Installation](./01-getting-started.md#quick-installation)** - NPX, npm, and source installation
 - **[First Steps](./quick-start.md#first-run)** - Your first agent and task
 
 ### 🛠 Core Guides

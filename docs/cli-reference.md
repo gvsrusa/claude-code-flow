@@ -2,6 +2,22 @@
 
 Complete reference for all Claude-Flow command-line interface commands, options, and usage patterns.
 
+## Installation
+
+```bash
+# Run without installation (recommended)
+npx claude-flow
+
+# Global installation
+npm install -g claude-flow
+
+# Run from source
+git clone https://github.com/ruvnet/claude-code-flow.git
+cd claude-code-flow
+npm install
+npm run build
+```
+
 ## Global Options
 
 These options can be used with any command:
